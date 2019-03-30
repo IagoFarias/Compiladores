@@ -10,23 +10,23 @@ import java.util.List;
 public class AnalisadorLexico {
 
 	
-	public static List<String> leituraAlfabeto(String alfabeto){
+	public static List<String> leituraLinguagem(String linguagem){
 		String linha = "";
 		BufferedReader arquivo = null;
-		List <String> listaAlfabeto = new ArrayList <String>();
-		listaAlfabeto.add("");
+		List <String> listaLinguagem = new ArrayList <String>();
+		listaLinguagem.add("");
 		
 		try {
-			arquivo = new BufferedReader(new FileReader(alfabeto));
+			arquivo = new BufferedReader(new FileReader(linguagem));
 
 			while (arquivo.ready()) {
 				linha = arquivo.readLine();
 				String[] a = linha.split(" ");
 
 				for (int i = 0; i < a.length; i++) {
-					if(listaAlfabeto.contains(a[i]) == true)
+					if(listaLinguagem.contains(a[i]) == true)
 						continue;
-					listaAlfabeto.add(a[i]);
+					listaLinguagem.add(a[i]);
 				}
 			}
 		}
@@ -50,7 +50,7 @@ public class AnalisadorLexico {
 
 		}
 		
-		return listaAlfabeto;
+		return listaLinguagem;
 		
 	}
 	

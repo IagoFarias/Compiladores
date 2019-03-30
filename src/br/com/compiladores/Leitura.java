@@ -10,13 +10,13 @@ import java.util.List;
 public class Leitura {
 
 	public static void main(String[] args) {
-		String alfabeto = "alfabeto.txt";
+		String linguagem = "linguagem.txt";
 		String programa = "programa.txt";
 		String linha = "";
 		Integer numeroLinha = 1;
 		int flagErro = 0; 
 		BufferedReader arquivo = null;
-		List <String> listaAlfabeto = AnalisadorLexico.leituraAlfabeto(alfabeto);
+		List <String> listaLinguagem = AnalisadorLexico.leituraLinguagem(linguagem);
 		
 		
 		try {
@@ -28,7 +28,7 @@ public class Leitura {
                 
 				for (int i = 0; i < a.length; i++) {
 					
-					if(listaAlfabeto.contains(a[i]) == false){						
+					if(listaLinguagem.contains(a[i]) == false){						
 					System.out.println("Erro na linha: "+numeroLinha+"   Coluna : "+(i+1)+"\n"+"Termo: "+a[i]);
 					flagErro=1;
 					}
